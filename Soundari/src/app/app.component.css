@@ -1,0 +1,30 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+  }
+  
+  th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 500px;
+  }
+
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    width: 200px;
+  }
+  
+
+  .name{
+    border-top-width: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    height: 28px;
+    padding-right: 24px;
+  }

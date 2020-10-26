@@ -1,0 +1,45 @@
+<form name="labForm" role="form" (ngSubmit)="save()" [formGroup]="labForm">
+    <div class="form-group">
+
+        <table>
+            <thead>
+                Enter no of Patients in Waiting Room :
+                <input type="number" class="form-control" value="" (input)="newRow($event.target.value)" />
+            </thead>
+            <br>
+            <tbody>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Reports List</th>
+                </tr>
+                <tr *ngFor="let row of labForm.get('totalRows')?.controls;">
+                    <td>
+                        <input class="form-control" type="text" [formControl]="row.get('patientName')">
+                    </td>
+                    <td>
+                        <ng-select [items]="listOfReports" [multiple]="true" bindLabel="ReportName" bindValue="Time"
+                            [closeOnSelect]="false" [formControl]="row.get('reportTime')">
+                            <ng-template ng-option-tmp let-item="item">
+                                <input id="check" type="checkbox" />
+                                {{item.ReportName}}
+                            </ng-template>
+                        </ng-select>
+                    </td>
+
+                </tr>     
+            </tbody>
+        </table>
+        <div>
+            <button type="button" class="btn btn-primary btn-md" (click)="reset()">Reset</button>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary btn-md">Save</button>
+        </div> 
+    </div>
+</form>
+
+<div *ngFor="let order of sortedName ">
+    <table>
+        <td>
+                <input class="form-control" type="text" value={{order.patientName}} >
+        </td>
+    </table>     
+</div>
